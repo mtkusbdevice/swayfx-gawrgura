@@ -2,7 +2,6 @@
 <img src="https://github.com/vidowner/swayfx-gawrgura/blob/main/img/photo_2023-08-12_17-44-11.jpg" width="350" align="center">
 <img src="https://github.com/vidowner/swayfx-gawrgura/blob/main/img/photo_2023-08-12_17-44-13.jpg" width="350" align="center">
 <img src="https://github.com/vidowner/swayfx-gawrgura/blob/main/img/photo_2023-08-12_17-44-14.jpg" width="350" align="center">
-<img src="https://github.com/vidowner/swayfx-gawrgura/blob/main/img/photo_2023-08-12_17-45-53.jpg" width="350" align="center">
 <img src="https://github.com/vidowner/swayfx-gawrgura/blob/main/img/photo_2023-08-12_18-03-12.jpg" width="350" align="center">
 
 ## Информация
