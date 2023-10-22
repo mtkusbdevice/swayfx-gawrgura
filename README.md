@@ -25,13 +25,6 @@
   
 Конфиги и обои берутся из `~/.config/sway/themes/swayfx_gawr_gura`
   
-## Настройка системы
-
-[```Установка ArchLinux```](https://notabug.org/owl410/owl_dotfiles/src/master/guid/ArchLinux%20uefi%20install.md)  
-[```Установка Apparmor```](https://notabug.org/owl410/owl_dotfiles/src/master/guid/Apparmor.md)  
-[```Установка Lutris```](https://notabug.org/owl410/owl_dotfiles/src/master/guid/Lutris.md)  
-[```Автостарт и Автологин```](https://notabug.org/owl410/owl_dotfiles/src/master/guid/Autostart_wm.md)  
-  
   
 ## Установка Swayfx
 ```
