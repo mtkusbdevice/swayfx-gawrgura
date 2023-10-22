@@ -19,9 +19,9 @@
 |Autotiling|[Autotiling](https://github.com/nwg-piotr/autotiling)|
   
 ## ВАЖНО!!!
-Я делал данный райс на Arch Linux, все настройки идут от `~/.config/sway/themes/swayfx_gawr_gura/sway` В первую очередь необходимо открыть этот файл и закоментировать/раскоментировать то что тебе нужно.
+Я делал данный райс на Arch Linux, все настройки идут от `~/.config/sway/themes/swayfx-gawrgura/sway` В первую очередь необходимо открыть этот файл и закоментировать/раскоментировать то что тебе нужно.
   
-Конфиги и обои берутся из `~/.config/sway/themes/swayfx_gawr_gura`
+Конфиги и обои берутся из `~/.config/sway/themes/swayfx-gawrgura`
   
   
 ## Установка Swayfx
@@ -51,21 +51,21 @@ yay cava
 ```
 Склонировать репозиторий командой(предварительно нужно поставить пакет git): 
 
-git clone https://notabug.org/owl410/owl_dotfiles
+git clone https://github.com/vidowner/swayfx-gawrgura
 ```  
   
 ```
-Из ~/owl_dotfiles/dotfiles/sway/swayfx_gawr_gura/.config скопировать все в ~/.config
+Из ~swayfx-gawrgura/.config скопировать все в ~/.config
 можно мышкой в файловом менеджере.
  
-cp -r ~/owl_dotfiles/dotfiles/sway/swayfx_gawr_gura/.config/ ~/.config
+cp -r ~/swayfx-gawrgura/.config/ ~/.config
 ```  
   
 ```
 Сделать исполняемыми все скрипты в ~/.config/sway/themes/swayfx_gawr_gura/scripts:
-sudo chmod -R u+x .config/sway/themes/swayfx_gawr_gura/scripts
+sudo chmod -R u+x .config/sway/themes/swayfx-gawrgura/scripts
 ```  
   
 ```
-Запустить данный sway можно командой sway -c .config/sway/themes/swayfx_gawr_gura/sway
+Запустить данный sway можно командой sway -c .config/sway/themes/swayfx-gawrgura/sway
 ```
