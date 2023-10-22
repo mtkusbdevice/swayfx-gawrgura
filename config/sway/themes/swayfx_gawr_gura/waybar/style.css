@@ -1,0 +1,121 @@
+/*ОБЩЕЕ*/
+* {
+    border-radius: 10px;
+    font-family: JetBrainsMono, Symbols Nerd Font;
+    font-size: 12px;
+}
+
+/*ЦВЕТА*/
+@define-color bg #f5f7fa;
+@define-color fg #123354;
+@define-color red #d25c61;
+@define-color blue #08a3ed;
+@define-color green #aaffaa;
+@define-color yellow #ffc762;
+@define-color orange #ffaf00;
+@define-color vilet #cf8ef4;
+@define-color gray #e4e8ee;
+@define-color gray2 #90a4ae;
+
+/*ВОРКСПЕЙСЫ*/
+#workspaces button {
+    padding: 0px 5px;
+    margin: 3px 5px;
+    background-color: @bg;
+    color: @gray2;
+    border-radius: 10px;
+}
+#workspaces button:hover {
+    background: @gray;
+    color: @fg;
+    border-radius: 10px;
+}
+#workspaces button.focused {
+    background: @bg;
+    color: @fg;
+    border-radius: 10px;
+}
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+/*МОДУЛИ*/
+#custom-menu {
+    color: @fg;
+    background-image: linear-gradient(90deg, #08a3ed 10%, #1dbffa 80%);
+    padding: 0px 10px;
+    margin: 5px 10px;
+    border-radius: 10px;
+}
+
+#clock {
+    padding: 0px 10px;
+    margin: 5px 0px;
+    color: @fg;
+    background-color: @gray;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#custom-weather {
+    padding: 0px 10px;
+    margin: 5px 0px;
+    color: @fg;
+    background: @gray;
+    border-radius: 0px 10px 10px 0px;
+}
+
+#custom-cmus {
+    padding: 0px 10px;
+    margin: 5px 5px;
+    color: @fg;
+    background: @gray;
+    border-radius: 10px;
+}
+
+#tray {
+    padding: 0px 10px;
+    margin: 5px 5px;
+    color: @fg;
+    background: @gray;
+    border-radius: 10px;
+}
+
+#language {
+    padding: 0px 10px;
+    margin: 5px 10px;
+    color: @bg;
+    background-image: linear-gradient(90deg, #08a3ed 10%, #1dbffa 80%);
+    border-radius: 10px;
+    font-family: JetBrainsMono-Bold;
+}
+
+#pulseaudio {
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 5px;
+    color: @fg;
+    background: @gray;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#cpu{
+    padding: 0px 10px;
+    margin: 5px 0px;
+    color: @fg;
+    background: @gray;
+    border-radius: 0px;
+}
+#memory{
+    padding: 0px 10px 0px 5px;
+    margin: 5px 0px;
+    color: @fg;
+    background: @gray;
+    border-radius: 0px 10px 10px 0px;
+}
+
+#custom-power {
+    color: @fg;
+    background-image: linear-gradient(90deg, #08a3ed 10%, #1dbffa 80%);
+    padding: 0px 10px;
+    margin: 5px 10px;
+    border-radius: 10px;
+}

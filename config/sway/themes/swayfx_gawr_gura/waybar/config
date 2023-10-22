@@ -1,0 +1,132 @@
+{
+// НАСТРОЙКИ БАРА
+	"layer": "top", // Слой на котором расположен вайбар
+	"position": "top", // Положение бара (top|bottom|left|right)
+	"height": 30, // Высота бара
+	"width": 1900, // Ширина бара
+	"margin-top": 7, // Отступ снизу
+
+    
+// МОДУЛИ
+	"modules-left": ["custom/menu", "sway/workspaces"],
+	"modules-center": ["clock", "custom/weather", "tray"],
+	"modules-right": ["custom/cmus", "sway/language", "pulseaudio", "cpu", "memory", "custom/power"],
+
+
+// КНОПКИ ВОРКСПЕЙСОВ
+	"sway/workspaces": {
+	"disable-scroll": false,
+	"all-outputs": true,
+	"format": "{icon}",
+	"format-icons": {
+		"1": "󰖟",
+		"2": "󰳫",
+		"3": "",
+		"4": "",
+		"5": "",
+		"6": "󰊗",
+		"7": "",
+		},
+	"tooltip": false
+	},
+
+
+// МЕНЮ
+	"custom/menu": {
+	"format": "<span color=\"#f5f7fa\">{icon}</span>",
+	"format-icons": {"default": ["󰣇"]},
+	"on-click": "set $menu dmenu_path | wofi --show drun -I -c ~/.config/sway/themes/swayfx_gawr_gura/wofi/config -s ~/.config/sway/themes/swayfx_gawr_gura/wofi/style.css | xargs swaymsg exec --",
+	"escape": true,
+	"tooltip": false
+	},
+
+
+// ЧАСЫ
+	"clock": {
+	"format": "<span color=\"#202020\"></span> {:%H:%M %p}",
+	"tooltip": false
+	},
+
+
+// ПОГОДА
+	"custom/weather": {
+	"format": "{}",
+	"interval": 10,
+	"exec": "~/.config/sway/themes/swayfx_gawr_gura/scripts/weather.sh",
+	"tooltip": false
+	},
+
+
+// ТРЕЙ    
+	"tray": {
+	"icon-size": 16,
+	"spacing": 10,
+	"tooltip": false
+	},
+
+
+// CMUS
+	"custom/cmus": {
+	"format": " {}",
+	//"max-length": 25,
+	"interval": 1,
+	"exec": "cmus-remote -C \"format_print '%F'\"",
+	"exec-if": "pgrep cmus",
+	"on-click": "cmus-remote -u",
+	"on-scroll-up": "cmus-remote --next",
+	"on-scroll-down": "cmus-remote --prev",
+	"escape": true,
+	"tooltip": false
+	},
+
+
+// ЛАНГУАГЕ
+	"sway/language": {
+		"format": "{}",
+		"on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+	},
+
+
+// ПУЛЬСА    
+	"pulseaudio": {
+	"scroll-step": 5,
+	"format": "{icon} {volume}%",
+	"format-bluetooth": "{volume}% {icon} {format_source}",
+	"format-bluetooth-muted": " {icon} {format_source}",
+	"format-muted": " {format_source}",
+	"format-source": "{volume}% ",
+	"format-source-muted": "",
+	"format-icons": {
+		"headphone": "",
+		"hands-free": "",
+		"headset": "",
+		"phone": "",
+		"portable": "",
+		"car": "",
+		"default": ["", "", ""]
+	},
+	"on-click": "pavucontrol",
+	"tooltip": false
+	},
+
+
+// ЗАГРУЗКА ПРОЦА
+	"cpu": {
+	"format": " {usage}%",
+	"tooltip": false
+	},
+
+
+// ЗАГРУЗКА ПАМЯТИ
+	"memory": {
+	"format": " {}%"
+	},
+
+
+// ПОВЕРМЕНЮ
+	"custom/power": {
+	"format": "<span color=\"#f5f7fa\">{icon}</span>",
+	"format-icons": {"default": [""]},
+	"on-click": "~/.config/sway/themes/swayfx_gawr_gura/scripts/power.sh",
+},
+}

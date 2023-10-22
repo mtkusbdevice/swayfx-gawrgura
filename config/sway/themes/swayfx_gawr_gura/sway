@@ -1,0 +1,313 @@
+# Это дефолтный конфиг для sway/swayfx
+# В системе лежит в: ~/.config/sway/config
+
+#--- КЛАВИША МОДИФИКАТОР --------------------------------------------------------------
+	set $mod Mod4
+
+
+#--- ПОВЕДЕНИЕ ПРИЛОЖЕНИЙ -------------------------------------------------------------
+	# Автозапуск
+	exec firefox
+	exec telegram-desktop -startintray
+	#exec autotiling
+	exec waybar -c ~/.config/sway/themes/swayfx_gawr_gura/waybar/config -s ~/.config/sway/themes/swayfx_gawr_gura/waybar/style.css
+
+	# Запуск на определенном воркспейсе
+	assign [app_id="firefox"] workspace 1
+	assign [app_id="Blender"] workspace 2
+	assign [app_id="org.inkscape.Inkscape"] workspace 3
+	assign [app_id="lutris"] workspace 6
+
+	# Запуск в фокусе
+	for_window [app_id="blender"] focus
+	for_window [app_id="org.inkscape.Inkscape"] focus
+
+	# Запуск в плавающем режиме
+	for_window [app_id="firefox"] floating enable
+	for_window [app_id="org.telegram.desktop"] floating enable
+	for_window [app_id="lutris"] floating enable
+	for_window [app_id="imv"] floating enable
+	for_window [app_id="mpv"] floating enable
+
+
+#--- ПЕРЕМЕННЫЕ -----------------------------------------------------------------------
+	set $left h
+	set $down j
+	set $up k
+	set $right l
+
+	set $term alacritty --config-file ~/.config/sway/themes/swayfx_gawr_gura/alacritty/alacritty.yml
+	set $menu wofi --show drun -I -c ~/.config/sway/themes/swayfx_gawr_gura/wofi/config -s ~/.config/sway/themes/swayfx_gawr_gura/wofi/style.css
+
+
+#--- ЭТО РАБОТАЕТ ТОЛЬКО В SWAYFX -----------------------------------------------------
+	# Скругления
+	corner_radius 12
+	smart_corner_radius enable
+
+	# Блюр
+	blur enable
+	blur_xray off
+	blur_passes 3
+	blur_radius 3
+
+	# ТЕНИ
+	shadows on
+	shadows_on_csd off
+	shadow_blur_radius 10
+	shadow_color #2b4f6f
+
+	# Затемнение неактивных окон
+	default_dim_inactive 0.0
+	dim_inactive_colors.unfocused #000000FF
+	dim_inactive_colors.urgent #900000FF
+
+#--- ВСЕ ЧТО ДАЛЬШЕ РАБОТАЕТ И В SWAYFX И В SWAY --------------------------------------
+
+
+#--- ДЕКОРАЦИИ ОКОН -------------------------------------------------------------------
+	# Гапсы
+	gaps inner 5
+	gaps outer 5
+	smart_gaps off
+
+	# Толщина рамок для обычных и плавающих окон
+	default_border pixel 1
+	default_floating_border none
+	
+	# Размер рамок окон
+	for_window [tiling] border pixel 1
+	for_window [floating] border none
+
+	# Отключение рамки если открыто одно окно
+	smart_borders on
+
+
+#--- СКРАЧПАД -------------------------------------------------------------------------
+	scratchpad_minimize disable
+
+
+#--- УКРАШАТЕЛЬСТВА -------------------------------------------------------------------
+	# Обои
+	output * bg ~/.config/sway/themes/swayfx_gawr_gura/wallpaper/swayfx_4.png fill
+
+	# Шрифт (по ходу для заголовков)
+	font pango:JetBrainsMono 10
+
+	# Курсор
+	seat seat0 xcursor_theme "capitaine-cursors"
+	exec_always gsettings set org.gnome.desktop.interface cursor-theme "capitaine-cursors"
+
+	# Курсоры, темы, иконки...
+	set $gnome-schema org.gnome.desktop.interface
+	exec_always {
+        	gsettings set $gnome-schema gtk-theme 'Zorin-Mint-Light'
+        	gsettings set $gnome-schema icon-theme 'Zorin'
+        	gsettings set $gnome-schema cursor-theme 'capitaine-cursors'
+        	gsettings set $gnome-schema font-name 'JetBrainsMono 10'
+			# Отключение кнопок управления окном
+			gsettings set org.gnome.desktop.wm.preferences button-layout ''
+	}
+
+	# Цвета рамок
+	client.focused			#f5f7fa #f5f7fa #f5f7fa #f5f7fa
+	client.focused_inactive		#123354 #123354 #123354 #123354
+	client.unfocused		#123354 #123354 #123354 #123354
+	client.urgent			#123354 #123354 #123354 #123354
+	client.placeholder		#123354 #123354 #123354 #123354
+
+
+#--- НАСТРОЙКИ МОНИТОРОВ --------------------------------------------------------------
+	#output HDMI-A-1 resolution 1920x1080 position 1920,0
+	#Справка по настройке: swaymsg -t get_outputs
+
+
+#--- УПРАВЛЕНИЕ БЛОКИРОВКОЙ МОНИТОРА --------------------------------------------------
+	#exec swayidle -w \
+	#timeout 300 'swaylock -f -c 000000' \
+	#timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+	#before-sleep 'swaylock -f -c 000000'
+
+
+#--- НАСТРОЙКА ТАЧПАДА ----------------------------------------------------------------
+	#input "2:14:SynPS/2_Synaptics_TouchPad" {
+	#dwt enabled
+	#tap enabled
+	#natural_scroll enabled
+	#middle_emulation enabled
+	#}
+
+
+#--- РАСКЛАДКА КЛАВИАТУРЫ -------------------------------------------------------------
+	input * {
+	    xkb_layout us,ru
+	    xkb_options grp:alt_shift_toggle
+	}
+
+	# Список устройств: swaymsg -t get_inputs
+
+
+#--- NUMLOCK --------------------------------------------------------------------------
+	input * xkb_numlock enabled
+
+
+#--- ХОТКЕИ ---------------------------------------------------------------------------
+
+    # Приложения
+    bindsym $mod+Return exec $term
+    bindsym --to-code $mod+d exec $menu
+	bindsym --to-code $mod+o exec obs
+	bindsym --to-code $mod+n exec nemo
+	bindsym --to-code $mod+l exec lutris
+	bindsym --to-code $mod+i exec inkscape
+	bindsym --to-code $mod+b exec blender
+
+    # Выключение/Перезагрузка	
+	bindsym --to-code $mod+Ctrl+r exec reboot
+	bindsym --to-code $mod+Ctrl+p exec poweroff
+
+    # Скриншоты
+	bindsym Print exec grim ~/screen-"$(date +%s)".png
+	bindsym $mod+Print exec grim -g "$(slurp)" ~/screen-"$(date +%s)".png
+    
+    # Закрыть окно
+    bindsym --to-code $mod+c kill
+
+    # Управление окном с зажатой клавишей mod
+    floating_modifier $mod normal
+
+
+    # Перезагрузить sway
+    bindsym --to-code $mod+Shift+r reload
+
+    # Выход из sway
+    bindsym --to-code $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+
+    # Переключение фокуса через переменные
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+    # Переключение фокуса через $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+
+    # Перемещение окна через переменные
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+    # Перемещение окна через $mod+[up|down|left|right]
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+
+
+    # Переход по воркспейсам
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace number 10
+
+    # Перемещение окон на другой воркспейс
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10
+
+
+    # Позиция нового окна
+    bindsym --to-code $mod+h splith
+    bindsym --to-code $mod+v splitv
+
+    # Смена стиля контейнера
+    #bindsym --to-code $mod+s layout stacking
+    #bindsym --to-code $mod+w layout tabbed
+    #bindsym --to-code $mod+e layout toggle split
+
+    # Фуллскрин
+    bindsym --to-code $mod+f fullscreen
+
+    # Сделать окно плавающим
+    bindsym --to-code $mod+Shift+space floating toggle
+
+    # Переключение между плавающими и тайловыми окнами
+    bindsym $mod+space focus mode_toggle
+
+    # Выделить все окна
+    #bindsym --to-code $mod+a focus parent
+
+
+    # Всернуть активное окно в скрачпад
+    bindsym $mod+Shift+minus move scratchpad
+
+    # Показать по кругу окна свернутую в скрачпад
+    bindsym $mod+minus scratchpad show
+
+
+	# Переход в режим ресайза
+	bindsym --to-code $mod+r mode "resize"
+
+	# Ресайз через переменные
+	mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ресайз через $mod+[up|down|left|right]
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Применить/отменить ресайз
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+
+#--- БАР ------------------------------------------------------------------------------
+bar {
+
+	# Это дефолтный waybar
+	swaybar_command waybar -c ~/.config/sway/themes/swayfx_gawr_gura/waybar/config -s ~/.config/sway/themes/swayfx_gawr_gura/waybar/style.css
+
+	# Это для swaybar
+    #position top
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+
+    #colors {
+        #statusline #ffffff
+        #background #323232
+        #inactive_workspace #32323200 #32323200 #5c5c5c
+    #}
+}
+
+
+#--- ПОДКЛЮЧЕНИЕ ВСЕХ ФАЙЛОВ ИЗ ДИРЕКТОРИИ С ДЕФОЛТНЫМ КОНФИГОМ -----------------------
+include /etc/sway/config.d/*
