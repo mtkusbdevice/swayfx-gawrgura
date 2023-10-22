@@ -1,13 +1,12 @@
 ## Галерея
-<img src="https://notabug.org/owl410/owl_dotfiles/raw/master/dotfiles/sway/swayfx_gawr_gura/.img/photo_2023-08-12_18-03-12.jpg" width="350" align="center">
-<img src="https://notabug.org/owl410/owl_dotfiles/raw/master/dotfiles/sway/swayfx_gawr_gura/.img/photo_2023-08-12_17-44-11.jpg" width="350" align="center">
-<img src="https://notabug.org/owl410/owl_dotfiles/raw/master/dotfiles/sway/swayfx_gawr_gura/.img/photo_2023-08-12_17-44-16.jpg" width="350" align="center">
-<img src="https://notabug.org/owl410/owl_dotfiles/raw/master/dotfiles/sway/swayfx_gawr_gura/.img/photo_2023-08-12_17-44-13.jpg" width="350" align="center">
-<img src="https://notabug.org/owl410/owl_dotfiles/raw/master/dotfiles/sway/swayfx_gawr_gura/.img/photo_2023-08-12_17-44-14.jpg" width="350" align="center">
-<img src="https://notabug.org/owl410/owl_dotfiles/raw/master/dotfiles/sway/swayfx_gawr_gura/.img/photo_2023-08-12_17-48-36.jpg" width="350" align="center">
+<img src="https://github.com/vidowner/swayfx-gawrgura/blob/main/img/photo_2023-08-12_17-44-11.jpg" width="350" align="center">
+<img src="https://github.com/vidowner/swayfx-gawrgura/blob/main/img/photo_2023-08-12_17-44-13.jpg" width="350" align="center">
+<img src="https://github.com/vidowner/swayfx-gawrgura/blob/main/img/photo_2023-08-12_17-44-14.jpg" width="350" align="center">
+<img src="https://github.com/vidowner/swayfx-gawrgura/blob/main/img/photo_2023-08-12_17-45-53.jpg" width="350" align="center">
+<img src="https://github.com/vidowner/swayfx-gawrgura/blob/main/img/photo_2023-08-12_18-03-12.jpg" width="350" align="center">
 
 ## Информация
-|DIstro|[ARCH](https://archlinux.org/)|
+|Distro|[ARCH](https://archlinux.org/)|
 |:---:|:---:|
 |WM|[SwayFx](https://github.com/WillPower3309/swayfx)|
 |Bar|[Waybar](https://github.com/Alexays/Waybar)|
@@ -21,7 +20,7 @@
 |Autotiling|[Autotiling](https://github.com/nwg-piotr/autotiling)|
   
 ## ВАЖНО!!!
-Я делал данный райс на ArchLinux, все настройки идут от `~/.config/sway/themes/swayfx_gawr_gura/sway` В первую очередь необходимо открыть этот файл и закоментировать/раскоментировать то что тебе нужно.
+Я делал данный райс на Arch Linux, все настройки идут от `~/.config/sway/themes/swayfx_gawr_gura/sway` В первую очередь необходимо открыть этот файл и закоментировать/раскоментировать то что тебе нужно.
   
 Конфиги и обои берутся из `~/.config/sway/themes/swayfx_gawr_gura`
   
