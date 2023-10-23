@@ -12,7 +12,7 @@
 |Terminal|[Alacritty](https://github.com/alacritty/alacritty)|
 |Shell|[Fish](https://fishshell.com/)|
 |Icon|[Zorin](https://github.com/ZorinOS/zorin-icon-themes)|
-|GTK3|[Zorin-Mint-Light](https://www.pling.com/p/1769479)|
+|GTK3|[Zorin-Blue-Light](https://www.pling.com/p/1769479)|
 |Cursors|[Default]|
 |Fonts|[JetBrainsMono](https://www.jetbrains.com/lp/mono/)|
 |Launcher|[wofi](https://sr.ht/~scoopta/wofi/)|
@@ -27,7 +27,7 @@
 ## Установка Swayfx
 ```
 sudo pacman -S alacritty mesa base-devel wlroots wayland wayland-protocols pcre2  
-json-c pango cairo gdk-pixbuf2 git messon cmake polkit  
+json-c pango cairo gdk-pixbuf2 git messon cmake polkit nodejs npm 
   
 git clone https://github.com/WillPower3309/swayfx  
 cd swayfx
@@ -40,11 +40,13 @@ sway - для того что бы запустить
   
 ## Установка софта
 ```
-sudo pacman -S pulseaudio pavucontrol firefox telegram-desktop mousepad gimp inkscape  
-blender ghostscript obs-studio xdg-desktop-portal-wlr transmission-gtk python  
-imv mpv nemo waybar grim slurp swaybg swaylock mako jq wofi htop cmus neofetch ranger unzip
+sudo pacman -S pulseaudio pavucontrol firefox telegram-desktop mousepad fish ttf-jetbrains-mono
+ghostscript xdg-desktop-portal-wlr python imv mpv ttf-jetbrains-mono-nerd nemo waybar grim slurp 
+swaybg swaylock mako jq wofi htop cmus neofetch ranger unzip xorg-xwayland lxappearance nano
 
-yay cava
+yay -S cava
+
+yay -S zorin-desktop-themes
 ``` 
   
 ## Установка темы Gawr-Gura
