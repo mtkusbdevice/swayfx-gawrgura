@@ -7,23 +7,24 @@
 
 #--- ПОВЕДЕНИЕ ПРИЛОЖЕНИЙ -------------------------------------------------------------
 	# Автозапуск
-	exec firefox
-	exec telegram-desktop -startintray
+	#exec microsoft-edge-stable
+	#exec telegram-desktop -startintray
 	#exec autotiling
 	exec waybar -c ~/.config/sway/themes/swayfx_gawr_gura/waybar/config -s ~/.config/sway/themes/swayfx_gawr_gura/waybar/style.css
 
 	# Запуск на определенном воркспейсе
-	assign [app_id="firefox"] workspace 1
-	assign [app_id="Blender"] workspace 2
-	assign [app_id="org.inkscape.Inkscape"] workspace 3
-	assign [app_id="lutris"] workspace 6
+	#assign [app_id="firefox"] workspace 1
+	#assign [app_id="Blender"] workspace 2
+	#assign [app_id="org.inkscape.Inkscape"] workspace 3
+	#assign [app_id="lutris"] workspace 6
+	#assign [app_id="Alacritty"] workspace 4
 
 	# Запуск в фокусе
-	for_window [app_id="blender"] focus
-	for_window [app_id="org.inkscape.Inkscape"] focus
+	#for_window [app_id="blender"] focus
+	#for_window [app_id="org.inkscape.Inkscape"] focus
 
 	# Запуск в плавающем режиме
-	for_window [app_id="firefox"] floating enable
+	for_window [app_id="Alacritty"] floating enable
 	for_window [app_id="org.telegram.desktop"] floating enable
 	for_window [app_id="lutris"] floating enable
 	for_window [app_id="imv"] floating enable
@@ -95,15 +96,15 @@
 	font pango:JetBrainsMono 10
 
 	# Курсор
-	seat seat0 xcursor_theme "capitaine-cursors"
-	exec_always gsettings set org.gnome.desktop.interface cursor-theme "capitaine-cursors"
+	#seat seat0 xcursor_theme "capitaine-cursors"
+	#exec_always gsettings set org.gnome.desktop.interface cursor-theme "capitaine-cursors"
 
 	# Курсоры, темы, иконки...
 	set $gnome-schema org.gnome.desktop.interface
 	exec_always {
-        	gsettings set $gnome-schema gtk-theme 'Zorin-Mint-Light'
+        	gsettings set $gnome-schema gtk-theme 'Zorin-Blue-Light'
         	gsettings set $gnome-schema icon-theme 'Zorin'
-        	gsettings set $gnome-schema cursor-theme 'capitaine-cursors'
+        	#gsettings set $gnome-schema cursor-theme 'capitaine-cursors'
         	gsettings set $gnome-schema font-name 'JetBrainsMono 10'
 			# Отключение кнопок управления окном
 			gsettings set org.gnome.desktop.wm.preferences button-layout ''
@@ -120,6 +121,7 @@
 #--- НАСТРОЙКИ МОНИТОРОВ --------------------------------------------------------------
 	#output HDMI-A-1 resolution 1920x1080 position 1920,0
 	#Справка по настройке: swaymsg -t get_outputs
+	output DP-1 mode 1920x1080@74.973Hz position 0,0
 
 
 #--- УПРАВЛЕНИЕ БЛОКИРОВКОЙ МОНИТОРА --------------------------------------------------
@@ -139,16 +141,16 @@
 
 
 #--- РАСКЛАДКА КЛАВИАТУРЫ -------------------------------------------------------------
-	input * {
-	    xkb_layout us,ru
-	    xkb_options grp:alt_shift_toggle
-	}
+	  input * {
+	      xkb_layout us,ru
+	      xkb_options grp:alt_shift_toggle
+	  }
 
 	# Список устройств: swaymsg -t get_inputs
 
 
 #--- NUMLOCK --------------------------------------------------------------------------
-	input * xkb_numlock enabled
+	#zinput * xkb_numlock enabled
 
 
 #--- ХОТКЕИ ---------------------------------------------------------------------------
@@ -156,22 +158,22 @@
     # Приложения
     bindsym $mod+Return exec $term
     bindsym --to-code $mod+d exec $menu
-	bindsym --to-code $mod+o exec obs
-	bindsym --to-code $mod+n exec nemo
-	bindsym --to-code $mod+l exec lutris
-	bindsym --to-code $mod+i exec inkscape
-	bindsym --to-code $mod+b exec blender
+	  #bindsym --to-code $mod+o exec obs
+	  bindsym --to-code $mod+e exec nemo
+	  #bindsym --to-code $mod+l exec lutris
+	  #bindsym --to-code $mod+i exec inkscape
+	  #bindsym --to-code $mod+b exec blender
 
     # Выключение/Перезагрузка	
-	bindsym --to-code $mod+Ctrl+r exec reboot
-	bindsym --to-code $mod+Ctrl+p exec poweroff
+	  bindsym --to-code $mod+Ctrl+r exec reboot
+	  bindsym --to-code $mod+Ctrl+p exec poweroff
 
     # Скриншоты
-	bindsym Print exec grim ~/screen-"$(date +%s)".png
-	bindsym $mod+Print exec grim -g "$(slurp)" ~/screen-"$(date +%s)".png
+	  bindsym $mod+Print exec grim ~/Pictures/Screenshots/screen-"$(date +%s)".png | wl-copy
+	  bindsym $mod+Shift+s exec grim -g "$(slurp)" ~/Pictures/Screenshots/screen-"$(date +%s)".png | wl-copy
     
     # Закрыть окно
-    bindsym --to-code $mod+c kill
+    bindsym --to-code Alt+F4 kill
 
     # Управление окном с зажатой клавишей mod
     floating_modifier $mod normal
