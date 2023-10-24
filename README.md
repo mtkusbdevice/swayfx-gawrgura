@@ -60,7 +60,7 @@ git clone https://github.com/vidowner/swayfx-gawrgura
 Из ~swayfx-gawrgura/.config скопировать все в ~/.config
 можно мышкой в файловом менеджере.
  
-cp -r ~/swayfx-gawrgura/.config/ ~/.config
+cp -r ~/swayfx-gawrgura/config/ ~/.config
 ```  
   
 ```
