@@ -1,8 +1,8 @@
 ## Галерея
-<img src="https://github.com/vidowner/swayfx-gawrgura/blob/main/img/photo_2023-08-12_17-44-11.jpg" width="350" align="center">
-<img src="https://github.com/vidowner/swayfx-gawrgura/blob/main/img/photo_2023-08-12_17-44-13.jpg" width="350" align="center">
-<img src="https://github.com/vidowner/swayfx-gawrgura/blob/main/img/photo_2023-08-12_17-44-14.jpg" width="350" align="center">
-<img src="https://github.com/vidowner/swayfx-gawrgura/blob/main/img/photo_2023-08-12_18-03-12.jpg" width="350" align="center">
+<img src="https://github.com/mtkusbdevice/swayfx-gawrgura/blob/main/img/photo_2023-08-12_17-44-11.jpg" width="400" align="center">
+<img src="https://github.com/mtkusbdevice/swayfx-gawrgura/blob/main/img/photo_2023-08-12_17-44-13.jpg" width="400" align="center">
+<img src="https://github.com/mtkusbdevice/swayfx-gawrgura/blob/main/img/photo_2023-08-12_17-44-14.jpg" width="400" align="center">
+<img src="https://github.com/mtkusbdevice/swayfx-gawrgura/blob/main/img/photo_2023-08-12_18-03-12.jpg" width="400" align="center">
 
 ## Информация
 |Distro|[ARCH](https://archlinux.org/)|
@@ -53,7 +53,7 @@ yay -S zorin-desktop-themes
 ```
 Склонировать репозиторий командой(предварительно нужно поставить пакет git): 
 
-git clone https://github.com/vidowner/swayfx-gawrgura
+git clone https://github.com/mtkusbdevice/swayfx-gawrgura
 ```  
   
 ```
